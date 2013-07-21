@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Track the Kraken - The Poseidon Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="description" content="Track the Kraken Ocean Buoy built by The Poseidon Project at Sutton Grammar School.">
+        <meta name="author" content="Priyesh Patel">
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/flat-ui.css" rel="stylesheet">
+        <link href="/css/tracker.css" rel="stylesheet">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <link rel="shortcut icon" href="/favicon.ico">
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div id="logo"></div>
+                    <a class="brand primary" href="#">Track the Kraken</a>
+                    <a class="brand secondary" href="http://poseidon.sgsphysics.co.uk/" target="_blank"><small>The Poseidon Project</small></a>
+                    <ul class="nav pull-right">
+                        <li><a href="?all">All Positions</a></li>
+                        <li><a href="?5">Last 5 Positions</a></li>
+                        <li><a href="?10">Last 10 Positions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="sidebar-main">
+                <h4>Latest Transmission<small id="last-ago"></small></h4>
+
+                <ul class="section">
+                    <li><strong>Transmission Number</strong><span id="last-sentenceid"></span></li>
+                    <li><strong>Date & Time</strong><span id="last-datetime"></span></li>
+                    <li><strong>Position</strong><span id="last-position"></span></li>
+                    <li><strong><abbr title="Height Above Mean Sea Level">AMSL</abbr></strong><span id="last-altitude"></span></li>
+                    <li><strong>GPS Satellites</strong><span id="last-satellites"></span></li>
+                    <li><strong>Temperature</strong><span id="last-temperature"></span></li>
+                    <li><strong>Battery Voltage</strong><span id="last-battery"></span></li>
+                    <li><strong>Average Speed</strong><span id="last-speed"></span></li>
+                </ul>
+
+                <hr />
+
+                <div id="message">
+                    <p><strong></strong></p>
+
+                    <hr />
+                </div>
+
+                <h4>Next Transmission<small id="next-transmission"></small></h4>
+
+                <hr />
+
+                <h4>Statistics</h4>
+
+                <ul class="section">
+                    <li><strong>Duration Out At Sea</strong><span id="stats-duration"></span></li>
+                    <li><strong>Distance Travelled</strong><span id="stats-distance"></span></li>
+                    <li><strong>Maximum Temperature</strong><span id="stats-max-temperature"></span></li>
+                    <li><strong>Minimum Temperature</strong><span id="stats-min-temperature"></span></li>
+                </ul>
+
+                <p class="credits"><small>Tracker by Priyesh Patel</small></p>
+            </div>
+
+            <div id="sidebar-bottom">
+                <p><a href="#" class="btn btn-large btn-block btn-primary" id="open-graph">Graphs</a></p>
+
+                <p><a href="#" class="btn btn-large btn-block" id="open-imu">IMU Data</a></p>
+            </div>
+
+            <div id="imu-panel">
+                <h4>IMU Data</h4>
+
+                <p>Downloads of <abbr title="Inertial Measurement Unit">IMU</abbr> data from individual 
+                    transmissions are available below in <abbr title="Comma-Separated Values">CSV</abbr> 
+                    files. Each file contains 5 seconds of 10Hz samples from the onboard accelerometer.</p>
+
+                <ul>
+                </ul>
+            </div>
+
+            <div class="google-map" id="google-map"></div>
+
+            <div id="graph-panel">
+                <div id="graph-select">
+                    <p><a href="#" id="graph-altitude" class="btn btn-small graph-btn"><abbr title="Height Above Mean Sea Level">AMSL</abbr></a></p>
+                    <p><a href="#" id="graph-satellites" class="btn btn-small graph-btn">GPS Satellites</a></p>
+                    <p><a href="#" id="graph-temperature" class="btn btn-small graph-btn">Temperature</a></p>
+                    <p><a href="#" id="graph-battery" class="btn btn-small graph-btn">Battery Voltage</a></p>
+                </div> 
+
+                <div id="graph"></div>
+            </div>
+        </div>
+
+        <div id="bottom"><p><small><span id="updated">Page Loaded</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Tracker by Priyesh Patel</small></p></div>
+
+        <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.flot.min.js"></script>
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/js/excanvas.min.js"></script><![endif]-->        
+        <script type="text/javascript" src="/js/moment.min.js"></script>
+        <script type="text/javascript" src="/js/tracker.js?201307211445"></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-21597058-3', 'sgsphysics.co.uk');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
