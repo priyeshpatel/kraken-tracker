@@ -4,7 +4,7 @@ tracker.js
 Priyesh Patel 2013
 */
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($) { google.maps.event.addDomListener(window, 'load', function() {
     var first_load = true;
 
     $('#sidebar-main').css('bottom', $('#sidebar-bottom').outerHeight());
@@ -371,18 +371,13 @@ jQuery(document).ready(function($) {
     }
 
     google.maps.visualRefresh = true;
-    var map;
-    function init_map() {
-        console.log('init map');
-        map = new google.maps.Map(document.getElementById("google-map"), {
-            center: new google.maps.LatLng(55.0878, -9.806156),
-            zoom: 8,
-            mapTypeId: google.maps.MapTypeId.TERRAIN,
-            streetViewControl: false,
-            minZoom: 3
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', init_map);
+    var map = new google.maps.Map(document.getElementById("google-map"), {
+        center: new google.maps.LatLng(55.0878, -9.806156),
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        streetViewControl: false,
+        minZoom: 3
+    });
 
     var infoWindow = new google.maps.InfoWindow({
         maxWidth: 400
@@ -585,4 +580,4 @@ jQuery(document).ready(function($) {
     }
 
     update();
-});
+}); });
