@@ -419,7 +419,7 @@ function update() {
             var lineSegment = new google.maps.Polyline({
                 strokeColor: "#8E44AD",
                 strokeWeight: 3,
-                strokeOpacity: i / lineLength,
+                strokeOpacity: (i / lineLength) * 0.7 + 0.3,
                 map: map
             });
             var path = lineSegment.getPath();
