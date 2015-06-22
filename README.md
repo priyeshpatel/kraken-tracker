@@ -11,3 +11,8 @@ http://track.poseidon.sgsphysics.co.uk/
 
 ### License
 The Kraken tracker is licensed under GNU GPL v3; see LICENSE.
+
+### Screenshots
+![Screenshot 1](/screenshots/tracker-1.png)
+![Screenshot 2](/screenshots/tracker-2.png)
+![Screenshot 3](/screenshots/tracker-3.png)
